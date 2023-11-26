@@ -154,3 +154,48 @@ public:
     std::string getTicketType() const { return ticketType; }
     int getUniqueID() const { return uniqueID; }
 
+    void displayInfo() const {
+        std::cout << "Ticket Type: " << ticketType << "\nUnique ID: " << uniqueID << std::endl;
+    }
+
+    void processInfo() {
+
+    }
+
+
+    bool operator==(const Ticket& other) const {
+        return ticketType == other.ticketType && uniqueID == other.uniqueID;
+    }
+
+    bool operator>(const Ticket& other) const {
+
+        return false;
+    }
+
+
+    static int generateUniqueID() {
+        return ++uniqueIDCounter;
+    }
+};
+
+
+int Ticket::uniqueIDCounter = 0;
+
+int main() {
+
+
+    int maxSeats, numRows, numZones, seatsPerRow;
+    char locationName[100];
+
+    std::cout << "Enter Location Information:\n";
+    std::cout << "Max Seats: ";
+    std::cin >> maxSeats;
+    std::cout << "Num Rows: ";
+    std::cin >> numRows;
+    std::cout << "Num Zones: ";
+    std::cin >> numZones;
+    std::cout << "Seats Per Row: ";
+    std::cin >> seatsPerRow;
+    std::cout << "Location Name: ";
+    std::cin.ignore();
+    std::cin.getline(locationName, sizeof(locationName));

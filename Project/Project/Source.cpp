@@ -199,3 +199,33 @@ int main() {
     std::cout << "Location Name: ";
     std::cin.ignore();
     std::cin.getline(locationName, sizeof(locationName));
+    EventLocation location(maxSeats, numRows, numZones, seatsPerRow, locationName);
+    location.displayInfo();
+
+    std::string eventName, eventDate, eventTime;
+
+    std::cout << "\nEnter Event Information:\n";
+    std::cout << "Event Name: ";
+    std::cin.ignore();
+    std::getline(std::cin, eventName);
+    std::cout << "Event Date: ";
+    std::cin >> eventDate;
+    std::cout << "Event Time: ";
+    std::cin >> eventTime;
+
+    Event myEvent(eventName, eventDate, eventTime);
+    myEvent.displayInfo();
+
+
+    std::string ticketType;
+
+    std::cout << "\nEnter Ticket Information:\n";
+    std::cout << "Ticket Type: ";
+    std::cin.ignore();
+    std::getline(std::cin, ticketType);
+
+    Ticket myTicket(ticketType);
+    myTicket.displayInfo();
+
+    return 0;
+}

@@ -123,4 +123,34 @@ public:
         return false;
     }
 };
+class Ticket {
+private:
+    std::string ticketType;
+    int uniqueID;
+    static int uniqueIDCounter;
+
+public:
+
+    Ticket() : ticketType(""), uniqueID(++uniqueIDCounter) {}
+
+    Ticket(const std::string& ticketType) : ticketType(ticketType), uniqueID(++uniqueIDCounter) {}
+
+
+    Ticket(const Ticket& other) : ticketType(other.ticketType), uniqueID(++uniqueIDCounter) {}
+
+
+    ~Ticket() {}
+
+
+    Ticket& operator=(const Ticket& other) {
+        if (this != &other) {
+            ticketType = other.ticketType;
+            uniqueID = ++uniqueIDCounter;
+        }
+        return *this;
+    }
+
+
+    std::string getTicketType() const { return ticketType; }
+    int getUniqueID() const { return uniqueID; }
 

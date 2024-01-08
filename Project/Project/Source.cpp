@@ -280,3 +280,11 @@ AbstractTicketManager* ticketManager = new TicketManager();
         case 3:
             ticketManager->SaveTickets();
             break;
+        case 4:
+            ticketManager->LoadTickets();
+            break;
+        case 5:
+            break;
+        default:
+            std::cout << "Invalid choice. Try again.\n";
+        }

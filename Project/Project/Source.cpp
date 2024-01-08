@@ -265,3 +265,18 @@ AbstractTicketManager* ticketManager = new TicketManager();
     do {
         Menu::display();
         choice = Menu::getUserChoice();
+ switch (choice) {
+        case 1: {
+            std::string ticketType;
+            std::cout << "Enter ticket type: ";
+            std::cin.ignore();
+            std::getline(std::cin, ticketType);
+            ticketManager->AddTicket(Ticket(ticketType));
+            break;
+        }
+        case 2:
+            ticketManager->DisplayTickets();
+            break;
+        case 3:
+            ticketManager->SaveTickets();
+            break;

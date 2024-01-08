@@ -259,3 +259,9 @@ int main() {
     Event myEvent(eventName, eventDate, eventTime);
     myEvent.displayInfo();
 //part2
+AbstractTicketManager* ticketManager = new TicketManager();
+
+    int choice;
+    do {
+        Menu::display();
+        choice = Menu::getUserChoice();

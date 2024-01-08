@@ -288,3 +288,9 @@ AbstractTicketManager* ticketManager = new TicketManager();
         default:
             std::cout << "Invalid choice. Try again.\n";
         }
+ } while (choice != 5);
+
+    delete ticketManager;
+
+    return 0;
+}
